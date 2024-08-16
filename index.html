@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Redirect</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            if (code) {
+                window.location.href = `myapp://oauth/callback?code=${encodeURIComponent(code)}`;
+            } else {
+                document.body.innerHTML = "Authorization failed or no code provided.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
