@@ -9,7 +9,6 @@
             const urlParams = new URLSearchParams(window.location.search);
             const code = urlParams.get('code');
             if (code) {
-                document.body.innerHTML = "Authorization code generated.";
                 window.location.href = `TickTickLiveActivity://oauth/callback?code=${encodeURIComponent(code)}`;
             } else {
                 document.body.innerHTML = "Authorization failed or no code provided.";
